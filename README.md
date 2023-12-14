@@ -7,7 +7,7 @@ Utilizing TensorFlow as the primary framework, the project focuses on emotion de
 Build an AI tool for the marketing department to analyze emotional responses to company ads using facial expressions in images. Develop a system to categorize emotions (e.g., joy, anger, fear) from an image dataset. Choose relevant technologies for components and communication. The goal is to identify at least three emotional states through facial expressions.
 
 # Development Planning - UML Schemas
-## UML Diagram (Revised)
+## UML Diagram
 Diagram - Design of Convolutional Neural Network to classify emotions and serve using API
 ![Design of Convolutional Neural Network to classify emotions and serve using API](/images/UML.jpg)
 
