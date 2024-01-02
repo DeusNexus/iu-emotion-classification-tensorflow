@@ -1,3 +1,9 @@
 /dataset/MMAFEDB/test/*
 /dataset/MMAFEDB/train/*
 /dataset/MMAFEDB/valid/*
+/dataset/Facial Expression Dataset/test/*
+/dataset/Facial Expression Dataset/train/*
+/dataset/Facial Expression Dataset/
+.venv
+/models/training/checkpoint/*
+/models/training/final/*

@@ -1,0 +1,7 @@
+Requirements:
+
+pip install tensorflow[and-cuda]
+pip install tensorrt
+
+pip install pydot
+sudo apt install graphviz
