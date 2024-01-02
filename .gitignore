@@ -7,4 +7,4 @@
 .venv
 /models/training/checkpoint/*
 /models/training/final/*
-/notebooks/archived_models/*
+/notebooks/archived
