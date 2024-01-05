@@ -22,6 +22,24 @@ Folders, Image Data, Count/Size, Balanced or Unbalanced?
 Accurary, Recall, Precision ...
 optimizer, loss function, etc.
 
+Results from iteratively training 4 different models that can be found in /models:
+    model_1_concept - Model as initially described in the concept phase
+    ![model_1_concept](/models/training/diagram/model_1_concept_diagram.png)
+    model_2_best - Model that was found in experimenting with different architectures and reading literature
+    ![model_2_best](/models/training/diagram/model_2_best_diagram.png)
+    model_3_best_nodropout - The result of discarding dropout from model_2
+    ![model_3_best_nodropout](/models/training/diagram/model_3_best_nodropout_diagram.png)
+    model_4_best_nodroupout_nobatchn - The result of discarding dropout and batch normalization from model_2
+    ![model_4_best_nodroupout_nobatchn](/models/training/diagram/model_4_best_nodroupout_nobatchn_diagram.png)
+
+Using three channels (RGB) for image input the following results were obtained:
+![RGB Model Training Results](/images/training_results_rgb.jpg)
+
+Using one channel (GRAYSCALE) for image input the following results were obtained:
+![GRAYSCALE Model Training Results](/images/training_results_grayscale.jpg)
+
+As it can be seen the RGB training results are slightly better eventough a large part of the training data is grayscale images. The model seems to learn aspects from the RGB data that are not available with only one channel.
+
 # How to get started
 ## Dependencies
 ...
