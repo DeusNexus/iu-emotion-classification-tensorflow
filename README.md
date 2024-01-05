@@ -22,7 +22,7 @@ Folders, Image Data, Count/Size, Balanced or Unbalanced?
 Accurary, Recall, Precision ...
 optimizer, loss function, etc.
 
-<div style="display: flex; flex-direction: column; align-items: flex-start; background-color: white'">
+<div style="display: flex; flex-direction: column; align-items: flex-start; background-color: #000000;">
     <img src="/models/training/diagram/model_1_concept_diagram.png" alt="Model 1 Image" width="200">
     <img src="/models/training/diagram/model_2_best_diagram.png" alt="Model 2 Image" width="200">
     <img src="/models/training/diagram/model_3_best_nodropout_diagram.png" alt="Model 3 Image" width="200">
