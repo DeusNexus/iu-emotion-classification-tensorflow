@@ -22,9 +22,9 @@ Folders, Image Data, Count/Size, Balanced or Unbalanced?
 Accurary, Recall, Precision ...
 optimizer, loss function, etc.
 
-<div style="display: flex; justify-content: space-between;">
-    <img src="/models/training/diagram/model_1_concept_diagram.png" style="width:280px;">
-    <img src="/models/training/diagram/model_2_best_diagram.png" style="width:280px;">
+<div style="display: flex; flex-direction: column; align-items: flex-start;">
+    <img src="/models/training/diagram/model_1_concept_diagram.png" alt="Model 1 Image" width="280">
+    <img src="/models/training/diagram/model_2_best_diagram.png" alt="Model 2 Image" width="280">
 </div>
 
 Results from iteratively training 4 different models that can be found in /models:
