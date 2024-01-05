@@ -23,22 +23,17 @@ Accurary, Recall, Precision ...
 optimizer, loss function, etc.
 
 <div style="display: flex; flex-direction: column; align-items: flex-start;">
-    <img src="/models/training/diagram/model_1_concept_diagram.png" alt="Model 1 Image" width="280">
-    <img src="/models/training/diagram/model_2_best_diagram.png" alt="Model 2 Image" width="280">
+    <img src="/models/training/diagram/model_1_concept_diagram.png" alt="Model 1 Image" width="200">
+    <img src="/models/training/diagram/model_2_best_diagram.png" alt="Model 2 Image" width="200">
+    <img src="/models/training/diagram/model_3_best_nodropout_diagram.png" alt="Model 3 Image" width="200">
+    <img src="/models/training/diagram/model_4_best_nodroupout_nobatchn_diagram.png" alt="Model 4 Image" width="200">
 </div>
 
 Results from iteratively training 4 different models that can be found in /models:
 - model_1_concept - Model as initially described in the concept phase
-<img src="/models/training/diagram/model_1_concept_diagram.png" style="width:280px;">
-
 - model_2_best - Model that was found in experimenting with different architectures and reading literature
-<img src="/models/training/diagram/model_2_best_diagram.png" style="width:280px;">
-
 - model_3_best_nodropout - The result of discarding dropout from model_2
-<img src="/models/training/diagram/model_3_best_nodropout_diagram.png" style="width:280px;">
-
 - model_4_best_nodroupout_nobatchn - The result of discarding dropout and batch normalization from model_2
-<img src="/models/training/diagram/model_4_best_nodroupout_nobatchn_diagram.png" style="width:280px;">
 
 Using three channels (RGB) for image input the following results were obtained:
 ![RGB Model Training Results](/images/training_results_rgb.jpg)
