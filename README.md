@@ -22,12 +22,13 @@ Folders, Image Data, Count/Size, Balanced or Unbalanced?
 Accurary, Recall, Precision ...
 optimizer, loss function, etc.
 
-<div style="display: flex; flex-direction: column; align-items: flex-start; background-color: #000000;">
+<div style="display: flex; flex-direction: column; align-items: flex-start; background-color: #ffffff; height: 100%;">
     <img src="/models/training/diagram/model_1_concept_diagram.png" alt="Model 1 Image" width="200">
     <img src="/models/training/diagram/model_2_best_diagram.png" alt="Model 2 Image" width="200">
     <img src="/models/training/diagram/model_3_best_nodropout_diagram.png" alt="Model 3 Image" width="200">
     <img src="/models/training/diagram/model_4_best_nodroupout_nobatchn_diagram.png" alt="Model 4 Image" width="200">
 </div>
+
 
 Results from iteratively training 4 different models that can be found in /models:
 - model_1_concept - Model as initially described in the concept phase
