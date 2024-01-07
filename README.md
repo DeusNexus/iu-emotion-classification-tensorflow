@@ -61,7 +61,14 @@ However if we use batchsize of one when evaluating we see that the best model pe
 
 ### Confusion Matrix
 ![confusion_matrix model_2_best_sgd_rgb_128](/images/confusion_matrix_best_model.png)
-
+Label Encodings:
+- 0: anger
+- 1: disgust
+- 2: fear
+- 3: happiness
+- 4: sadness
+- 5: surprise
+- 6: neutral
 
 # How to get started
 ## Dependencies
