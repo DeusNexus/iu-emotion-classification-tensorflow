@@ -47,8 +47,19 @@ The mean of all models max achieved val_accuracy is: 0.5652485278745493
 
 The highest val_accuracy (model_2_best_sgd_rgb_128) is: 0.5928241014480591
 
-![model_2_best_sgd_rgb_128](/images/best_model_metrics.png)
-The best model performed ~2.8% better than the mean val_accuracy.
+![metrics model_2_best_sgd_rgb_128](/images/best_model_metrics.png)
+The best model performed ~2.8% better than the mean val_accuracy training validation.
+
+However if we use batchsize of one when evaluating we see that the best model performs better.
+    Final Results by evaluating model (batchsize = 1):
+    Train accuracy = 83.28%
+    Validation accuracy = 63.52%
+
+ROC Curve:
+![roc model_2_best_sgd_rgb_128](/images/roc_curve_best_model.png)
+
+Confusion Matrix:
+![confusion_matrix model_2_best_sgd_rgb_128](/images/confusion_matrix_best_model.png)
 
 
 # How to get started
