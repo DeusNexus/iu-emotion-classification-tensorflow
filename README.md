@@ -38,6 +38,15 @@ Using one channel (GRAYSCALE) for image input the following results were obtaine
 
 As it can be seen the RGB training results are slightly better eventough a large part of the training data is grayscale images. The model seems to learn aspects from the RGB data that are not available with only one channel.
 
+The best model was selected based on the final maximum training validation accuracy (val_accuracy).
+The model file with the highest val_accuracy is: ../models/training/history/model_2_best_sgd_rgb_128_augment_history.json
+The mean of all models max achieved val_accuracy is: 0.5652485278745493
+The highest val_accuracy (model_2_best_sgd_rgb_128) is: 0.5928241014480591
+
+![model_2_best_sgd_rgb_128](/images/best_model_metrics.png)
+The best model performed ~2.8% better than the mean val_accuracy.
+
+
 # How to get started
 ## Dependencies
 ...
