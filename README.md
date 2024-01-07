@@ -55,10 +55,11 @@ However if we use batchsize of one when evaluating we see that the best model pe
     Train accuracy = 83.28%
     Validation accuracy = 63.52%
 
-ROC Curve:
+
+### ROC Curve
 ![roc model_2_best_sgd_rgb_128](/images/roc_curve_best_model.png)
 
-Confusion Matrix:
+### Confusion Matrix
 ![confusion_matrix model_2_best_sgd_rgb_128](/images/confusion_matrix_best_model.png)
 
 
