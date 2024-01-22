@@ -5,3 +5,9 @@ pip install tensorrt
 
 pip install pydot
 sudo apt install graphviz
+
+pip install fastapi
+pip install "uvicorn[standard]"
+sudo apt-get install uvicorn
+
+pip install python-multipart
