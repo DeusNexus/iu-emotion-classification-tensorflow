@@ -68,8 +68,10 @@
 
                         const data = await response.json();
                         const resultDiv = document.getElementById('result');
-                        resultDiv.innerHTML =   `<p>Predicted Emotion: ${data.predicted_emotion}</p></br> \
-                                                <p>Class Probabilities: ${data.class_probabilities}</p>                                              `;
+                        resultDiv.innerHTML =  `<p><b>Predicted Emotion:</b> ${data.predicted_emotion}</p> \
+                                                <p><b>Predicted Emotion Label:</b> ${data.predicted_emotion_label}</p> \
+                                                <p><b>Class Probabilities:</b> ${data.class_probabilities}</p>`;
+
                     } catch (error) {
                         console.error('Error predicting emotion:', error);
                     }

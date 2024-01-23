@@ -12,6 +12,7 @@ from tensorflow.keras.models import model_from_json
 from tensorflow.keras.preprocessing import image
 from tensorflow.keras.applications.vgg16 import preprocess_input
 import numpy as np
+import json
 
 # Load your pre-trained Keras model
 # Due to file upload limitation the ckpt file is now loaded with json_file model architecture and weights.
@@ -89,11 +90,18 @@ async def predict_emotion(file: UploadFile = File(...)):
         # Get the predicted emotion (assuming your model has a softmax output layer)
         predicted_emotion = int(np.argmax(predictions))
 
+        class_probabilities_dict = []
+        for idx, prob in enumerate(predictions[0]):
+            class_probabilities_dict.append({ labels[idx] : prob})
+        class_probabilities = str({ key: value for item in class_probabilities_dict for key, value in item.items() })
+
         return JSONResponse(content = {
             "predicted_emotion": predicted_emotion,
-            "class_probabilities": str(predictions),
+            "predicted_emotion_label": labels[int(predicted_emotion)],
+            "class_probabilities": class_probabilities,
             "label_encodings":labels
             }, status_code=200)
+    
     except Exception as e:
         print("Error:", e)
         raise HTTPException(status_code=500, detail="Internal Server Error")
