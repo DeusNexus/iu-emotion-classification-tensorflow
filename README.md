@@ -67,8 +67,8 @@ However if we use batchsize of one when evaluating we see that the best model pe
 
 ### Confusion Matrix
 ![confusion_matrix model_2_best_sgd_rgb_128](/images/confusion_matrix_best_model.png)
-![confusion_matrix model_2_best_sgd_rgb_128 balanced](/images/confusion_matrix_best_model_balanced.png)
-![confusion_matrix model_2_best_sgd_rgb_128 balanced 2](/images/confusion_matrix_best_model_balanced-2.png)
+![confusion_matrix model_2_best_sgd_rgb_128 balanced](/images/confusion_matrix_best_model_balanced_emotions.png)
+![confusion_matrix model_2_best_sgd_rgb_128 balanced 2](/images/confusion_matrix_best_model_balanced-2_emotions.png)
 
 **Label Encodings:**
 - 0: anger
