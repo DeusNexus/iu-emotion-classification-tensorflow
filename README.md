@@ -79,8 +79,13 @@ However if we use batchsize of one when evaluating we see that the best model pe
 ## Installation instructions
 ...
 
-## API usage
-...
+## API usage using pre-build docker image
+# Pull the latest build image
+docker pull deusnexus/emotion_classification:latest
+# Run the container
+docker run --name emotion_prediction_container -p 8000:8000 emotion_prediction_fastapi:latest
+# Open the API on localhost
+http://127.0.0.1:8000
 
 # Reflection
 What I learned ...
