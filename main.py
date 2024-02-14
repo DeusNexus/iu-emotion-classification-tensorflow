@@ -1,12 +1,9 @@
+# Importing necessary libraries and modules
 import os
-# Setting logging level
-os.environ['TF_CPP_MIN_LOG_LEVEL'] = '1'  # or '3' to additionally suppress all warnings
-
 from io import BytesIO
 from pathlib import Path
-from fastapi.responses import FileResponse
+from fastapi.responses import FileResponse, JSONResponse
 from fastapi import FastAPI, File, UploadFile, HTTPException
-from fastapi.responses import JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
 from tensorflow.keras.models import model_from_json
 from tensorflow.keras.preprocessing import image
@@ -14,21 +11,22 @@ from tensorflow.keras.applications.vgg16 import preprocess_input
 import numpy as np
 import json
 
-# Load your pre-trained Keras model
-# Due to file upload limitation the ckpt file is now loaded with json_file model architecture and weights.
-# Load architecture from JSON file
+# Set TensorFlow logging level to suppress unnecessary warnings
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '1'  # or '3' to additionally suppress all warnings
+
+# Load pre-trained Keras model architecture and weights from JSON file and H5 file, respectively
 with open("./models/best_model/best_model_architecture.json", "r") as json_file:
     loaded_model_json = json_file.read()
 
 keras_best_model = model_from_json(loaded_model_json)
-
-# Load weights
 keras_best_model.load_weights("./models/best_model/best_weights.h5")
 
+# Define file paths for HTML, CSS, and favicon files
 html_file_path = Path(__file__).parent / "html" / "index.html"
 css_file_path = Path(__file__).parent / "html" / "index.css"
 favicon_file_path = Path(__file__).parent / "html" / "favicon.ico"
 
+# Initialize FastAPI app
 app = FastAPI()
 
 # Enable CORS for all origins (useful for local development)
@@ -40,7 +38,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Label encodings
+# Define emotion labels
 labels = {
     0: "anger",
     1: "disgust",
@@ -64,19 +62,22 @@ def preprocess_image(file):
 
     return img_array
 
+# Endpoint to serve the index.html file
 @app.get("/")
 def read_root():
     return FileResponse(html_file_path, media_type="text/html")
 
+# Endpoint to serve the index.css file
 @app.get("/index.css")
 def get_css():
     return FileResponse(css_file_path, media_type="stylesheet")
 
+# Endpoint to serve the favicon.ico file
 @app.get("/favicon.ico")
 def get_favicon():
     return FileResponse(favicon_file_path, media_type="image/x-icon")
 
-# Corrected route without @app.head('/')
+# Endpoint to predict emotion based on the uploaded image
 @app.post("/api/predict")
 async def predict_emotion(file: UploadFile = File(...)):
     try:
@@ -85,23 +86,25 @@ async def predict_emotion(file: UploadFile = File(...)):
         
         # Make predictions
         predictions = keras_best_model.predict(img_array)
-        print(predictions)
 
         # Get the predicted emotion (assuming your model has a softmax output layer)
         predicted_emotion = int(np.argmax(predictions))
 
+        # Create a dictionary of class probabilities
         class_probabilities_dict = []
         for idx, prob in enumerate(predictions[0]):
-            class_probabilities_dict.append({ labels[idx] : prob})
+            class_probabilities_dict.append({ labels[idx]: prob })
         class_probabilities = str({ key: value for item in class_probabilities_dict for key, value in item.items() })
 
-        return JSONResponse(content = {
+        # Return predictions in JSON format
+        return JSONResponse(content={
             "predicted_emotion": predicted_emotion,
             "predicted_emotion_label": labels[int(predicted_emotion)],
             "class_probabilities": class_probabilities,
-            "label_encodings":labels
-            }, status_code=200)
+            "label_encodings": labels
+        }, status_code=200)
     
     except Exception as e:
+        # Handle exceptions and return an Internal Server Error if necessary
         print("Error:", e)
         raise HTTPException(status_code=500, detail="Internal Server Error")
