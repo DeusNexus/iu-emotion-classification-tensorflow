@@ -13,3 +13,5 @@ notes
 /models/training/final/*
 
 /notebooks/archived
+
+/__pycache__
