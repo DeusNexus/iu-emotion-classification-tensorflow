@@ -1,3 +1,9 @@
+# Emotion Prediction Docker API
+1. Select an image from your local computer
+2. Click the predict button
+3. View the results: The predicted emotion is displayed along with the class probabilities.
+![emotion prediction api](../images/docker_api.png)
+
 # Pull the pre-build image for Docker Hub
 ### Pull the latest build image
 `docker pull deusnexus/emotion_classification:latest`
