@@ -11,3 +11,5 @@ pip install "uvicorn[standard]"
 sudo apt-get install uvicorn
 
 pip install python-multipart
+
+CHECK IF ALL IMAGES HAVE BEEN ADDED TO README
