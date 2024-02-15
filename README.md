@@ -19,8 +19,17 @@ Folders, Image Data, Count/Size, Balanced or Unbalanced?
 ..
 
 ## Model Metrics and Hyper Parameters
-Accurary, Recall, Precision ...
-optimizer, loss function, etc.
+In this notebook, an in-depth evaluation of emotion recognition models trained on the cleaned dataset is conducted. The analysis begins with importing modules and defining a function to identify the highest metrics, such as accuracy, loss, val_accuracy, and val_loss, in the training history of each model. The model with the highest val_accuracy, identified as 'model_2_best_sgd_rgb_128,' is selected for further scrutiny. A ranking function is implemented, creating an array that ranks models based on val_accuracy. The top 10 best and 5 worst models are printed, offering a quick overview of the models' relative performance. 
+
+Subsequently, a function plots different models using various optimizers and batch sizes, comparing the results for both rgb and grayscale color modes. This exploration aims to discern any noticeable effects of using either color mode, considering the dataset's predominant grayscale images.
+
+To gain a nuanced understanding of the best model's performance, a dataframe is created using the model training history, capturing metrics (accuracy, loss, val_accuracy, val_loss) across epochs. A histogram illustrates the distribution of performance metrics, emphasizing the highest cumulative bin. A heatmap of val_accuracy vs. epoch provides insights into how quickly models learn, with brighter colors indicating quicker learning.
+
+Further, the dataframe is leveraged to find max and min values grouped by model, offering a detailed snapshot of the training history. The maximum values, sorted by val_accuracy in descending order, are presented in a dataframe. Among all models, the lowest and highest values are identified, offering insights into the overall performance spectrum. Additionally, mean, median, and boxplots are calculated and visualized to provide an overview of metric distributions.
+
+The analysis then shifts focus to the best-performing model, probing its training and validation accuracy, loss, and confusion matrix. The confusion matrix highlights correct predictions on the diagonal and exposes challenges in predicting certain emotions. The classification report offers detailed metrics, revealing f1-scores, precision, recall, and support for each emotion label. 
+
+A Micro- and Macro-averaging ROC curve analysis follows, illustrating the trade-off between True Positive and False Positive rates with corresponding AUC values. Lastly, the best model undergoes evaluation using the test set with batch_size = 1, yielding insights into both training and validation accuracies. This multifaceted evaluation provides a comprehensive understanding of the trained emotion recognition models, shedding light on their strengths, challenges, and overall performance characteristics.
 
 ![Model 1 Image](/images/model_diagrams.png)
 
@@ -59,16 +68,10 @@ However if we use batchsize of one when evaluating we see that the best model pe
 
 ![metrics model_2_best_sgd_rgb_128 balanced 2](/images/best_model_metrics_balanced-2.png)
 
-
 ### ROC Curve
 ![roc model_2_best_sgd_rgb_128](/images/roc_curve_best_model.png)
 ![roc model_2_best_sgd_rgb_128 balanced](/images/roc_curve_best_model_balanced.png)
 ![roc model_2_best_sgd_rgb_128 balanced 2](/images/roc_curve_best_model_balanced-2.png)
-
-### Confusion Matrix
-![confusion_matrix model_2_best_sgd_rgb_128](/images/confusion_matrix_best_model.png)
-![confusion_matrix model_2_best_sgd_rgb_128 balanced](/images/confusion_matrix_best_model_balanced_emotions.png)
-![confusion_matrix model_2_best_sgd_rgb_128 balanced 2](/images/confusion_matrix_best_model_balanced-2_emotions.png)
 
 **Label Encodings:**
 - 0: anger
@@ -78,6 +81,11 @@ However if we use batchsize of one when evaluating we see that the best model pe
 - 4: sadness
 - 5: surprise
 - 6: neutral
+
+### Confusion Matrix
+![confusion_matrix model_2_best_sgd_rgb_128](/images/confusion_matrix_best_model.png)
+![confusion_matrix model_2_best_sgd_rgb_128 balanced](/images/confusion_matrix_best_model_balanced_emotions.png)
+![confusion_matrix model_2_best_sgd_rgb_128 balanced 2](/images/confusion_matrix_best_model_balanced-2_emotions.png)
 
 # How to get started
 ## Dependencies
