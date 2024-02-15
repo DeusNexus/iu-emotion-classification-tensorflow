@@ -17,6 +17,8 @@
 `http://127.0.0.1:8000`
 
 # Running API directly
+### Enter docker-api directory
+`cd docker-api`
 ### Create a local pythong venv
 `python3 -m venv venv`
 ### Activate the virtual environment
