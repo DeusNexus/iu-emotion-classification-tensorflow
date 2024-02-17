@@ -87,12 +87,17 @@ However if we use batchsize of one when evaluating we see that the best model pe
 ![confusion_matrix model_2_best_sgd_rgb_128 balanced](/images/confusion_matrix_best_model_balanced_emotions.png)
 ![confusion_matrix model_2_best_sgd_rgb_128 balanced 2](/images/confusion_matrix_best_model_balanced-2_emotions.png)
 
+# Front-end of Docker API
+### See more information in docker-api/README.md
+The retrained model uses the emotion images of the balanced-2 dataset for its predictions.
+- The user selectes a file from their device
+- The user clicks predict
+- The prediction emotion and class probabilities are displayed.
+![docker-api front-end](/images/docker_api.png)
+
 # How to get started
 ## Dependencies
 ...
-...
-
-## Installation instructions
 ...
 
 ## API usage using pre-build docker image
