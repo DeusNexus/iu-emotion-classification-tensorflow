@@ -103,9 +103,10 @@ However if we use batchsize of one when evaluating we see that the best model pe
 ![metrics model_2_best_sgd_rgb_128 balanced 2](/images/best_model_metrics_balanced-2.png)
 
 ### ROC Curve
-![roc model_2_best_sgd_rgb_128](/images/roc_curve_best_model.png)
+<!-- ![roc model_2_best_sgd_rgb_128](/images/roc_curve_best_model.png)
 ![roc model_2_best_sgd_rgb_128 balanced](/images/roc_curve_best_model_balanced.png)
-![roc model_2_best_sgd_rgb_128 balanced 2](/images/roc_curve_best_model_balanced-2.png)
+![roc model_2_best_sgd_rgb_128 balanced 2](/images/roc_curve_best_model_balanced-2.png) -->
+![ROC Curve for the best model unbalanced & balanced emotions](/images/roc_curve_all.png)
 
 **Label Encodings:**
 - 0: anger
@@ -120,7 +121,7 @@ However if we use batchsize of one when evaluating we see that the best model pe
 <!-- ![confusion_matrix model_2_best_sgd_rgb_128](/images/confusion_matrix_best_model.png)
 ![confusion_matrix model_2_best_sgd_rgb_128 balanced](/images/confusion_matrix_best_model_balanced_emotions.png)
 ![confusion_matrix model_2_best_sgd_rgb_128 balanced 2](/images/confusion_matrix_best_model_balanced-2_emotions.png) -->
-![Confusion Matrixes for the best model unbalanced & balanced](/images/confusion_matrix_all.png)
+![Confusion Matrixes for the best model unbalanced & balanced emotions](/images/confusion_matrix_all.png)
 
 # Front-end of Docker API
 ### See more information in docker-api/README.md
