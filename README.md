@@ -58,7 +58,7 @@ The model architectures are specified in JSON files, which are read by the code 
 The training history for each model is saved, enabling tracking and visualization of performance and learning. 
 Additionally, model architectures are saved in the "diagram" folder, checkpoint files are saved on improved epochs, and final models are saved as h5 files.
 
-Examples of saved file formats include:
+Examples of saved file formats include `modelname`_`optimizer`_`colormode`_`batchsize`_`balanced vs standard`_`history, final or cpt`.`filename_ext`:
 - History: model_1_concept_adam_grayscale_32_augment_history.json
 - Final model (not included on Git due to size): model_2_best_rmsprop_rgb_512_augment_final.h5
 - Checkpoint: model_3_best_nodropout_rmsprop_rgb_512_augment_cpt.h5
