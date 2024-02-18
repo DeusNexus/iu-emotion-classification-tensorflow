@@ -18,8 +18,36 @@ The architecture begins with a Convolutional Layer (Conv2D_1) with 32 filters, f
 This architecture combines convolutional and fully connected layers, augmented by batch normalization and dropout for enhanced generalization and prevention of overfitting.
 
 ## Dataset Overview
-Source
-Folders, Image Data, Count/Size, Balanced or Unbalanced?
+The provided image dataset, named MMAFEDB, is organized into three main folders: test, train, and valid. Each of these folders contains subfolders for seven different emotions: angry, disgust, fear, happy, neutral, sad, and surprise. The dataset statistics reveal that the test set comprises 17,356 images, with 13,767 in grayscale and 3,589 in RGB. The training set consists of 92,968 images, with 64,259 in grayscale and 28,709 in RGB. The validation set contains 17,356 images, with 13,767 in grayscale and 3,589 in RGB. The dataset is sourced from Kaggle (https://www.kaggle.com/datasets/mahmoudima/mma-facial-expression). Emotion-wise distribution across the sets varies, with neutral being the most prevalent emotion. 
+
+Train Folder:
+- Neutral: **29,384 images**
+- Angry: 6,566 images
+- Fear: *4,859 images*
+- Happy: **28,592 images**
+- Disgust: *3,231 images*
+- Sad: **12,223 images**
+- Surprise: 8,113 images
+
+Test Folder:
+- Neutral: **5,858 images**
+- Angry: 1,041 images
+- Fear: 691 images
+- Happy: **5,459 images**
+- Disgust: *655 images*
+- Sad: **2,177 images**
+- Surprise: 1,475 images
+
+Valid Folder:
+- Neutral: **5,839 images**
+- Angry: 1,017 images
+- Fear: *659 images*
+- Happy: **5,475 images**
+- Disgust: *656 images*
+- Sad: **2,236 images**
+- Surprise: 1,474 images
+
+This breakdown provides a detailed view of the distribution of images across different emotions for each folder in the MMAFEDB dataset.
 
 # Model Development
 ..
