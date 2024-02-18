@@ -8,8 +8,8 @@ Build an AI tool for the marketing department to analyze emotional responses to 
 
 # Development Planning - UML Schemas
 ## UML Diagram
-Diagram - Design of Convolutional Neural Network to classify emotions and serve using API
-![Design of Convolutional Neural Network to classify emotions and serve using API](/images/UML.jpg)
+Diagram (Revised from Concept Phase) - Design of Convolutional Neural Network to classify emotions and serve using API
+![Design of Convolutional Neural Network to classify emotions and serve using API](/images/UML_updated.jpg)
 
 ## Dataset Overview
 Source
