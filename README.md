@@ -131,16 +131,13 @@ The retrained model uses the emotion images of the balanced-2 dataset for its pr
 
 # How to get started
 ## Dependencies for using the Jupyter Notebooks - Note if no CUDA GPU is present it will default to use CPU (slow).
-- Create a new virtual python environment for the notebooks.
-
+Create a new virtual python environment for the notebooks.
 `python3 -m venv venv`
 
-- Activate the environment (Linux)
-
+Activate the environment (Linux)
 `source venv/bin/activate`
 
-- Install the dependencies
-
+Install the dependencies
 `pip3 install -r requirements.txt`
 
 ## API usage using pre-build docker image
