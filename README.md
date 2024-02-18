@@ -81,10 +81,10 @@ A Micro- and Macro-averaging ROC curve analysis follows, illustrating the trade-
 ![Model 1 Image](/images/model_diagrams.png)
 
 Results from iteratively training 4 different models that can be found in /models:
-- model_1_concept - Model as initially described in the concept phase
-- model_2_best - Model that was found in experimenting with different architectures and reading literature
-- model_3_best_nodropout - The result of discarding dropout from model_2
-- model_4_best_nodroupout_nobatchn - The result of discarding dropout and batch normalization from model_2
+- **model_1_concept** - Model as initially described in the concept phase
+- **model_2_best** - Model that was found in experimenting with different architectures and reading literature
+- **model_3_best_nodropout** - The result of discarding dropout from model_2
+- **model_4_best_nodroupout_nobatchn** - The result of discarding dropout and batch normalization from model_2
 
 Using three channels (RGB) for image input the following results were obtained:
 ![RGB Model Training Results](/images/training_results_rgb.jpg)
