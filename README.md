@@ -117,9 +117,10 @@ However if we use batchsize of one when evaluating we see that the best model pe
 - 6: neutral
 
 ### Confusion Matrix
-![confusion_matrix model_2_best_sgd_rgb_128](/images/confusion_matrix_best_model.png)
+<!-- ![confusion_matrix model_2_best_sgd_rgb_128](/images/confusion_matrix_best_model.png)
 ![confusion_matrix model_2_best_sgd_rgb_128 balanced](/images/confusion_matrix_best_model_balanced_emotions.png)
-![confusion_matrix model_2_best_sgd_rgb_128 balanced 2](/images/confusion_matrix_best_model_balanced-2_emotions.png)
+![confusion_matrix model_2_best_sgd_rgb_128 balanced 2](/images/confusion_matrix_best_model_balanced-2_emotions.png) -->
+![Confusion Matrixes for the best model unbalanced & balanced](/images/confusion_matrix_all.png)
 
 # Front-end of Docker API
 ### See more information in docker-api/README.md
