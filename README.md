@@ -18,7 +18,7 @@ The architecture begins with a Convolutional Layer (Conv2D_1) with 32 filters, f
 This architecture combines convolutional and fully connected layers, augmented by batch normalization and dropout for enhanced generalization and prevention of overfitting.
 
 ## Dataset Overview
-The provided image dataset, named MMAFEDB, is organized into three main folders: test, train, and valid. Each of these folders contains subfolders for seven different emotions: angry, disgust, fear, happy, neutral, sad, and surprise. The dataset statistics reveal that the test set comprises 17,356 images, with 13,767 in grayscale and 3,589 in RGB. The training set consists of 92,968 images, with 64,259 in grayscale and 28,709 in RGB. The validation set contains 17,356 images, with 13,767 in grayscale and 3,589 in RGB. The dataset is sourced from Kaggle (https://www.kaggle.com/datasets/mahmoudima/mma-facial-expression). Emotion-wise distribution across the sets varies, with neutral being the most prevalent emotion. 
+The provided image dataset, named MMAFEDB, is organized into three main folders: test, train, and valid. Each of these folders contains subfolders for seven different emotions: angry, disgust, fear, happy, neutral, sad, and surprise. The dataset statistics reveal that the test set comprises 17,356 images, with 13,767 in grayscale and 3,589 in RGB. The training set consists of 92,968 images, with 64,259 in grayscale and 28,709 in RGB. The validation set contains 17,356 images, with 13,767 in grayscale and 3,589 in RGB. The dataset is sourced from Kaggle (https://www.kaggle.com/datasets/mahmoudima/mma-facial-expression). Emotion-wise distribution across the sets varies, with neutral being the most prevalent emotion. The following results can also be found in the 1_dataset_exploration.ipynb notebook where insights about the dataset are gathered and it's also briefly cleaned for low quality images that are below a certain size threshold.
 
 Train Folder:
 - Neutral: **29,384 images**
@@ -50,10 +50,23 @@ Valid Folder:
 This breakdown provides a detailed view of the distribution of images across different emotions for each folder in the MMAFEDB dataset.
 
 # Model Development
-..
+## Model Training
+In the 2_model_training_iterative.ipynb notebook, four different Keras Sequential models are trained using the cleaned dataset (without balancing emotions). The models, named model_1_concept, model_2_best, model_3_best_nodropout, and model_4_best_nodropout_nobatchn, were developed through experimentation and adjustments based on the initial concept and literature recommendations for convolutional neural networks (CNN).
+
+The code begins with importing necessary modules and creating ImageDataGenerators and flow_from_directory functions for both the training and test sets. 
+The model architectures are specified in JSON files, which are read by the code to iteratively build each Keras model. This allows easy iteration over different models and manual adjustments to optimizers and color modes (RGB or grayscale). 
+The training history for each model is saved, enabling tracking and visualization of performance and learning. 
+Additionally, model architectures are saved in the "diagram" folder, checkpoint files are saved on improved epochs, and final models are saved as h5 files.
+
+Examples of saved file formats include:
+- History: model_1_concept_adam_grayscale_32_augment_history.json
+- Final model (not included on Git due to size): model_2_best_rmsprop_rgb_512_augment_final.h5
+- Checkpoint: model_3_best_nodropout_rmsprop_rgb_512_augment_cpt.h5
+
+For practicality, only the best-performing model is saved in a dedicated "models/best_model" folder, including both the architecture (JSON file) and weights (h5 file).
 
 ## Model Metrics and Hyper Parameters
-In this notebook, an in-depth evaluation of emotion recognition models trained on the cleaned dataset is conducted. The analysis begins with importing modules and defining a function to identify the highest metrics, such as accuracy, loss, val_accuracy, and val_loss, in the training history of each model. The model with the highest val_accuracy, identified as 'model_2_best_sgd_rgb_128,' is selected for further scrutiny. A ranking function is implemented, creating an array that ranks models based on val_accuracy. The top 10 best and 5 worst models are printed, offering a quick overview of the models' relative performance. 
+In the 3_training_evaluation.ipynb notebook, an in-depth evaluation of emotion recognition models trained on the cleaned dataset is conducted. The analysis begins with importing modules and defining a function to identify the highest metrics, such as accuracy, loss, val_accuracy, and val_loss, in the training history of each model. The model with the highest val_accuracy, identified as 'model_2_best_sgd_rgb_128,' is selected for further scrutiny. A ranking function is implemented, creating an array that ranks models based on val_accuracy. The top 10 best and 5 worst models are printed, offering a quick overview of the models' relative performance. 
 
 Subsequently, a function plots different models using various optimizers and batch sizes, comparing the results for both rgb and grayscale color modes. This exploration aims to discern any noticeable effects of using either color mode, considering the dataset's predominant grayscale images.
 
@@ -108,6 +121,8 @@ However if we use batchsize of one when evaluating we see that the best model pe
 ![roc model_2_best_sgd_rgb_128 balanced 2](/images/roc_curve_best_model_balanced-2.png) -->
 ![ROC Curve for the best model unbalanced & balanced emotions](/images/roc_curve_all.png)
 
+
+### Confusion Matrix
 **Label Encodings:**
 - 0: anger
 - 1: disgust
@@ -116,8 +131,6 @@ However if we use batchsize of one when evaluating we see that the best model pe
 - 4: sadness
 - 5: surprise
 - 6: neutral
-
-### Confusion Matrix
 <!-- ![confusion_matrix model_2_best_sgd_rgb_128](/images/confusion_matrix_best_model.png)
 ![confusion_matrix model_2_best_sgd_rgb_128 balanced](/images/confusion_matrix_best_model_balanced_emotions.png)
 ![confusion_matrix model_2_best_sgd_rgb_128 balanced 2](/images/confusion_matrix_best_model_balanced-2_emotions.png) -->
