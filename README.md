@@ -114,6 +114,15 @@ The models were trained and the evaluation data is included here below.
 ## Best performing model
 The best model was selected based on the final maximum training validation accuracy (val_accuracy).
 
+Validation accuracy of the top and bottom 5 models.
+![best_worst_models_val_accuracy](/images/best_worst_models_val_accuracy.png)
+
+Boxenplot of highest accuracies & lowest losses for test and validation
+![boxenplot_highest_acc_lowest_loss](/images/boxenplot_highest_acc_lowest_loss.png)
+
+Histogram Distribution showing accuracies and highest bar (mean) is highlighted
+![histplot_val_accuracy_train_validate](/images/histplot_val_accuracy_train_validate.png)
+
 The model file with the highest val_accuracy is: ../models/training/history/model_2_best_sgd_rgb_128_augment_history.json
 
 The mean of all models max achieved val_accuracy is: 0.5652485278745493
@@ -133,27 +142,15 @@ However if we use batchsize of one when evaluating we see that the best model pe
 ![metrics model_2_best_sgd_rgb_128 balanced 2](/images/best_model_metrics_balanced-2.png)
 
 ### ROC Curve
-<!-- ![roc model_2_best_sgd_rgb_128](/images/roc_curve_best_model.png)
-![roc model_2_best_sgd_rgb_128 balanced](/images/roc_curve_best_model_balanced.png)
-![roc model_2_best_sgd_rgb_128 balanced 2](/images/roc_curve_best_model_balanced-2.png) -->
+A - Best Model Unbalanced, B - Best Model Balanced-1 Dataset, C - Best Model Balanced-2 Dataset
 ![ROC Curve for the best model unbalanced & balanced emotions](/images/roc_curve_all.png)
 
-
 ### Confusion Matrix
-**Label Encodings:**
-- 0: anger
-- 1: disgust
-- 2: fear
-- 3: happiness
-- 4: sadness
-- 5: surprise
-- 6: neutral
-<!-- ![confusion_matrix model_2_best_sgd_rgb_128](/images/confusion_matrix_best_model.png)
-![confusion_matrix model_2_best_sgd_rgb_128 balanced](/images/confusion_matrix_best_model_balanced_emotions.png)
-![confusion_matrix model_2_best_sgd_rgb_128 balanced 2](/images/confusion_matrix_best_model_balanced-2_emotions.png) -->
+A - Best Model Unbalanced, B - Best Model Balanced-1 Dataset, C - Best Model Balanced-2 Dataset
 ![Confusion Matrixes for the best model unbalanced & balanced emotions](/images/confusion_matrix_all.png)
 
 ### Classification Report
+A - Best Model Unbalanced, B - Best Model Balanced-1 Dataset, C - Best Model Balanced-2 Dataset
 ![Classification Report for the best model unbalanced & balanced emotions](/images/classification_report_all.png)
 
 # Front-end of Docker API
