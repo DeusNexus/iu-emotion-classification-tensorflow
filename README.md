@@ -127,6 +127,7 @@ The best model was selected based on the final maximum training validation accur
 - The mean of all models max achieved val_accuracy is: **0.5652485278745493**
 - The highest val_accuracy (model_2_best_sgd_rgb_128) is: **0.5928241014480591**
 
+**Training History of Unbalanced Dataset**
 ![metrics model_2_best_sgd_rgb_128](/images/best_model_metrics.png)
 The best model performed ~2.8% better than the mean val_accuracy training validation.
 
