@@ -114,20 +114,18 @@ The models were trained and the evaluation data is included here below.
 ## Best performing model
 The best model was selected based on the final maximum training validation accuracy (val_accuracy).
 
-Validation accuracy of the top and bottom 5 models.
+**Validation accuracy of the top and bottom 5 models**
 ![best_worst_models_val_accuracy](/images/best_worst_models_val_accuracy.png)
 
-Boxenplot of highest accuracies & lowest losses for test and validation
+**Boxenplot of highest accuracies & lowest losses for test and validation**
 ![boxenplot_highest_acc_lowest_loss](/images/boxenplot_highest_acc_lowest_loss.png)
 
-Histogram Distribution showing accuracies and highest bar (mean) is highlighted
+**Histogram Distribution showing accuracies and highest bar (mean) is highlighted**
 ![histplot_val_accuracy_train_validate](/images/histplot_val_accuracy_train_validate.png)
 
-The model file with the highest val_accuracy is: ../models/training/history/model_2_best_sgd_rgb_128_augment_history.json
-
-The mean of all models max achieved val_accuracy is: 0.5652485278745493
-
-The highest val_accuracy (model_2_best_sgd_rgb_128) is: 0.5928241014480591
+- The model file with the highest val_accuracy is: **../models/training/history/model_2_best_sgd_rgb_128_augment_history.json**
+- The mean of all models max achieved val_accuracy is: **0.5652485278745493**
+- The highest val_accuracy (model_2_best_sgd_rgb_128) is: **0.5928241014480591**
 
 ![metrics model_2_best_sgd_rgb_128](/images/best_model_metrics.png)
 The best model performed ~2.8% better than the mean val_accuracy training validation.
@@ -137,8 +135,10 @@ However if we use batchsize of one when evaluating we see that the best model pe
     Train accuracy = 83.28%
     Validation accuracy = 63.52%
 
+**Training History of Balanced-1 Dataset**
 ![metrics model_2_best_sgd_rgb_128 balanced](/images/best_model_metrics_balanced.png)
 
+**Training History of Balanced-2 Dataset**
 ![metrics model_2_best_sgd_rgb_128 balanced 2](/images/best_model_metrics_balanced-2.png)
 
 ### ROC Curve
