@@ -102,9 +102,10 @@ Initially it was thought to be the better option because too much augmentation t
 One can follow these in the notebooks `4_balanced_emotions.ipynb` and `5_balanced_emotions_2.ipynb`. First, old augmentation is cleaned up to return to the original dataset. Then for each emotion that does not reach the required amount augmentation is performed and the folder then reaches the desired amount e.g. 10.000 images. Next, the folders that are above the desired amount are trimmed (images removed with lowest size first) so that all folders have the same amount of images when training starts.
 
 The two figures illustrate how the augmentation was performed.
-Balanced-1 Dataset (10.000 images per class) 
+
+**Balanced-1 Dataset (10.000 images per class)**
 ![Balanced-1 Dataset](/images/balanced_dataset_trim.png)
-Balanced-1 Dataset (30.000 images per class)
+**Balanced-1 Dataset (30.000 images per class) - Unchanged since all meet 30.000 requirement.**
 ![Balanced-2 Dataset](/images/balanced-2_dataset_trim.png)
 
 The models were trained and the evaluation data is included here below.
