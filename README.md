@@ -94,6 +94,22 @@ Using one channel (GRAYSCALE) for image input the following results were obtaine
 
 As it can be seen the RGB training results are slightly better eventough a large part of the training data is grayscale images. The model seems to learn aspects from the RGB data that are not available with only one channel.
 
+## Balancing the Dataset
+An attempt was made to use balanced amount of emotion images so that each class has the same amount. From the original dataset it becomes clear that some emotions contained many images while others only very small proportion.
+For this reason two different balancing attempts were explored to see the impact of augmentation. First the low threshold was used of **10.000 images** so that the folders with small amount of images will not end up with many multiples of their own original images.
+Initially it was thought to be the better option because too much augmentation to reach the other classes original counts was expected to yield less good results. However the **balanced-2 dataset** where all image classes are augmented to reach **30.000 images** per emotion performed better. Even with the emotions that contained few images it still performed better.
+
+One can follow these in the notebooks `4_balanced_emotions.ipynb` and `5_balanced_emotions_2.ipynb`. First, old augmentation is cleaned up to return to the original dataset. Then for each emotion that does not reach the required amount augmentation is performed and the folder then reaches the desired amount e.g. 10.000 images. Next, the folders that are above the desired amount are trimmed (images removed with lowest size first) so that all folders have the same amount of images when training starts.
+
+The two figures illustrate how the augmentation was performed.
+Balanced-1 Dataset (10.000 images per class) 
+![Balanced-1 Dataset](/images/balanced_dataset_trim.png)
+Balanced-1 Dataset (30.000 images per class)
+![Balanced-2 Dataset](/images/balanced-2_dataset_trim.png)
+
+The models were trained and the evaluation data is included here below.
+
+
 ## Best performing model
 The best model was selected based on the final maximum training validation accuracy (val_accuracy).
 
@@ -135,6 +151,9 @@ However if we use batchsize of one when evaluating we see that the best model pe
 ![confusion_matrix model_2_best_sgd_rgb_128 balanced](/images/confusion_matrix_best_model_balanced_emotions.png)
 ![confusion_matrix model_2_best_sgd_rgb_128 balanced 2](/images/confusion_matrix_best_model_balanced-2_emotions.png) -->
 ![Confusion Matrixes for the best model unbalanced & balanced emotions](/images/confusion_matrix_all.png)
+
+### Classification Report
+![Classification Report for the best model unbalanced & balanced emotions](/images/classification_report_all.png)
 
 # Front-end of Docker API
 ### See more information in docker-api/README.md
