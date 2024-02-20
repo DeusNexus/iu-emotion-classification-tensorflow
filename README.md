@@ -142,16 +142,18 @@ However if we use batchsize of one when evaluating we see that the best model pe
 **Training History of Balanced-2 Dataset**
 ![metrics model_2_best_sgd_rgb_128 balanced 2](/images/best_model_metrics_balanced-2.png)
 
+## Classification Graphs
+- A - Best Model Unbalanced
+- B - Best Model Balanced-1 Dataset
+- C - Best Model Balanced-2 Dataset
+
 ### ROC Curve
-A - Best Model Unbalanced, B - Best Model Balanced-1 Dataset, C - Best Model Balanced-2 Dataset
 ![ROC Curve for the best model unbalanced & balanced emotions](/images/roc_curve_all.png)
 
 ### Confusion Matrix
-A - Best Model Unbalanced, B - Best Model Balanced-1 Dataset, C - Best Model Balanced-2 Dataset
 ![Confusion Matrixes for the best model unbalanced & balanced emotions](/images/confusion_matrix_all.png)
 
 ### Classification Report
-A - Best Model Unbalanced, B - Best Model Balanced-1 Dataset, C - Best Model Balanced-2 Dataset
 ![Classification Report for the best model unbalanced & balanced emotions](/images/classification_report_all.png)
 
 # Front-end of Docker API
