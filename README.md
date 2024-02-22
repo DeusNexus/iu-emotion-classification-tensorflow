@@ -187,14 +187,22 @@ Install the dependencies
 `http://127.0.0.1:8000`
 
 # Reflection
-What I learned ...
-What challenges occured ...
-Installing CUDA drivers for NVIDIA Graphic Card
-What recommendations are suggested ...
-What could be improved ...
+Initially, working with CUDA drivers was cumbersome and it was trial and error to get my NVIDIA GPU to work which has been my biggest challenge.
+During the development of the Emotion Analysis using a Convolution Neural Network I learned about model architectures (convolutional layers / max pooling / dropout / batch normalization), optimizers and loss functions.
+
+Furthermore, how to measure the model performance using different metrics to capture the training history and evaluate the impact of all the different parameters that were used. I aimed to create a project structure that is organized
+in a clear and purpose-specific manner and save weights and captured model metrics in designated folders and files. Through this process I came to understand better how models are saved and trained in an iterative manner, and can also be resumed in training 
+in a later stage and be saved with architecture or just the trained weights and how to work with these files.
+
+The discovery that a image dataset with majority greyscale images and minor part rgb images still seemed to perform better when trained in rgb color. By reading different literature and online material I learned how dropout and batch normalization can improve the generalization and performance significantly.
+
+The evaluation of my trained models using different visualizations; e.g. confusion matrix, classification report (f1-scores, recall, precision, accuracy) gave me good insights how the model performed, what is means and identify potential areas of improvement.
+Balancing the dataset through image augmentation learned me how to balance image classes, however it did not improve my unbalanced dataset significantly and this will definitely be an area I will explore and optimize more in future project.
+
+Finally, building a simple api using FastAPI and Docker learned me to think from the perspective of an end-user (e.g. operations) which would call the API or use the front-end website to interact with my trained model.
 
 # Conclusion
-Did we achieve the goal etc and how?
+The project achieved to classify emotion images with an average of 63.52% using the unbalanced model based on evaluating the entire test set which seems to be on the high end of the achieved validation accuracies from others on Kaggle (https://www.kaggle.com/datasets/mahmoudima/mma-facial-expression/code). 
 
 # Disclaimer
 The developed application is licensed under the GNU General Public License.
